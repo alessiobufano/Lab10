@@ -11,10 +11,13 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.bar.FXMLController">
    <top>
-      <Label text="Simulazione Bar (Lab10 TdP-2020)" BorderPane.alignment="CENTER">
+      <Label text="Bar's Clients Simulation" BorderPane.alignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
       </Label>
    </top>
    <center>
@@ -22,15 +25,37 @@
          <children>
             <HBox>
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleSimula" text="Simula" />
+                  <Label text="CHOICE SIMULATION TYPE: ">
+                     <HBox.margin>
+                        <Insets left="10.0" top="9.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#doSimulation" text="NEW SIMULATION">
+                     <HBox.margin>
+                        <Insets left="15.0" top="5.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#doOptimizedSimulation" text="NEW OPTIMIZED SIMULATION">
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
-            </HBox>
-            <Label text="Risultati">
                <VBox.margin>
-                  <Insets top="12.0" />
+                  <Insets top="10.0" />
                </VBox.margin>
+            </HBox>
+            <Label text="SIMULATION RESULTS:">
+               <VBox.margin>
+                  <Insets left="10.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
             </Label>
-            <TextArea fx:id="txtResult" />
+            <TextArea fx:id="txtResult" editable="false">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin></TextArea>
          </children>
       </VBox>
    </center>
